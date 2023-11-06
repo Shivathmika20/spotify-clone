@@ -6,20 +6,25 @@ const Playlists = () => {
     const [{token,dispatch}]=useContextProvider();
     useEffect(()=>{
       const getPlaylist=async ()=>{
-        const res=await axios.get('https://api.spotify.com/v1/me/playlists',
+        const res=await axios.get("https://api.spotify.com/v1/me/playlists",
             {
               headers:
               {
-                Authorization:"Bearer"+token,
+                Authorization:"Bearer "+token,
                 "Content-Type":"application/json",
-              }
+              },
             }
             
         );
-        console.log(res);
-      }
+        const{ items}=res.data
+            console.log(items)
+        const playlist=items.map(({name,id})=>{
+          {return {name,id}};
+        })
+          console.log(playlist);
+      };
       getPlaylist();
-    },[token,dispatch])
+    },[token,dispatch]);
 
 
     return (
