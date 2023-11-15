@@ -19,15 +19,16 @@ const Spotify = () => {
                 "Content-Type":"application/json",
               },
     })
-    console.log(result.data);
+   // console.log(result.data);
     const userDetails={
       userId:result.data.id,
       userName:result.data.display_name,
 
     }
+    console.log(userDetails);
     dispatch({type:reducercase.SET_USER,userDetails});
   }
-  //getUser()
+  getUser()
   
  },[dispatch,token])
       
