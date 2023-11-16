@@ -21,7 +21,7 @@ const Body = () => {
           id:res.data.id,
           name:res.data.name,
           description:res.data.description.startsWith("<a") ? " " :res.data.description,
-          image:res.data.images[0].url,
+          image1:res.data.images[0].url,
           tracks:res.data.tracks.items.map(({track})=>({
             id:track.id,
             name:track.name,
@@ -42,15 +42,64 @@ const Body = () => {
       getInitialPlaylist()
   },[token,dispatch,selectedPlayId])
   return (
-    <div>
+    <div className='text-white'>
       {
         selectedPlaylist &&(
           <>
-              <div className="playlist">
+             <div className="playlist ">
                   <div className="image">
-                    <img src="{selectedPlaylist.image}" alt="selectedplaylist" />
+                    <img src={selectedPlaylist.image1} alt="selectedplaylist" className='w-1/3 h-1/3' />
                   </div>
-                </div>         
+                  <div className="playlist_details">
+                    <span>PLAYLIST</span>
+                    <h2 className='title'>{selectedPlaylist.name}</h2>
+                    <p className='description'>{selectedPlaylist.description}</p>
+                  </div>
+              </div>
+              <div className="list">
+                    <div className="col">
+                      <span>#</span>
+                    </div>
+                    <div className="col">TITLE</div>
+                    <div className="col">ALBUM</div>
+                    <div className="col">
+                      <span>
+                        <AiFillClockCircle />
+                      </span>
+                    </div>
+              </div> 
+              <div className="tracks">
+                        {
+                          selectedPlaylist.tracks.map(({id,name,artists,image,duration,album,uri,track_num},index)=>{
+                            return(
+                              <div className="rows " index={id}>
+                                <div className="col">
+                                  <span key={id}>{index+1}</span>
+                                </div>
+                                <div className="detail">
+                                  <div className="img">
+                                    <img src={image} alt="tracks" />
+                                  </div>
+                                  <div className="info">
+                                   <span className="name">
+                                    {name}
+                                   </span>
+                                   <span>{artists}</span>
+                                  </div>
+                                </div>
+                                <div className="album">
+                                  {album}
+                                </div>
+                                <div className="time">
+                                  {duration}
+                                </div>
+                               
+                              </div>
+                            )
+                          })
+                          
+                        }
+                </div>            
           </>
         )
       }
