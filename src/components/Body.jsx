@@ -46,13 +46,13 @@ const Body = () => {
       {
         selectedPlaylist &&(
           <>
-             <div className="playlist ">
-                  <div className="image">
-                    <img src={selectedPlaylist.image1} alt="selectedplaylist" className='w-1/3 h-1/3' />
+             <div className="playlist mx-8  my-0 flex items-center gap-8">
+                  <div className="image ">
+                    <img src={selectedPlaylist.image1} alt="selectedplaylist" className='h-60 shadow-md' />
                   </div>
-                  <div className="playlist_details">
-                    <span>PLAYLIST</span>
-                    <h2 className='title'>{selectedPlaylist.name}</h2>
+                  <div className="playlist_details flex flex-col gap-8">
+                    <span className='text-xl font-semibold'>PLAYLIST</span>
+                    <h2 className='title text-3xl font-bold text-black'>{selectedPlaylist.name}</h2>
                     <p className='description'>{selectedPlaylist.description}</p>
                   </div>
               </div>

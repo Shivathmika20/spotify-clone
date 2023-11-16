@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Sidebar from './Sidebar'
+
 import Navbar from './Navbar'
 import Body from './Body'
 import Footer from './Footer'
@@ -35,12 +36,12 @@ const Spotify = () => {
   return (
 
     
-    <div className='container max-w-[100vw] max-h-[100vh] overflow-hidden grid grid-rows-[minmax(80vh,15vh)] h-full w-full'>
-       <div className='spotify-main grid grid-cols-[200px_minmax(900px,_1fr)_100px] bg-gradient-to-b from-transparent to-black bg-[rgb(32,80,100)] h-full w-full '>
+    <div className='container max-w-[100vw] max-h-[100vh] overflow-hidden grid grid-rows-[minmax(80vh,15vh)] h-full w-full m-0'>
+       <div className='spotify-main grid  grid-cols-[200px_minmax(900px,_1fr)_100px] bg-gradient-to-b from-transparent to-black bg-[rgb(32,80,100)] h-full w-full '>
         <Sidebar/>
-        <div className="spotify-nav h-full w-full overflow-auto ">
+        <div className="spotify-nav h-full w-[87vw] overflow-auto ">
           <Navbar/>
-          <div className="spotify-main">
+          <div className="spotify-main h-full w-full">
             <Body/>
           </div>
         </div>
