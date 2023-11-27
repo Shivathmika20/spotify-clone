@@ -42,8 +42,15 @@ const Body = () => {
       }
       getInitialPlaylist()
   },[token,dispatch,selectedPlayId])
+
+  const msToSec=(ms)=>{
+    const minutes=Math.floor(ms/60000);
+    const seconds=((ms%60000)/1000).toFixed(0);
+    return minutes + ":"+(seconds<10 ?0:"")+seconds;
+
+  }
   return (
-    <div className='text-white'>
+    <div className='text-white  '>
       {
         selectedPlaylist &&(
           <>
@@ -57,7 +64,7 @@ const Body = () => {
                     <p className='description'>{selectedPlaylist.description}</p>
                   </div>
               </div>
-              <div className="list mt-8 grid text-[#dddcdc] px-11 py-12 sticky top-[15vh] transition duration-300 ease-in-out ">
+              <div className="list mt-4 grid  text-[#dddcdc] px-11 py-3 sticky top-[15vh] transition duration-300 ease-in-out ">
                   
                     <div className="col">
                       <span>#</span>
@@ -71,31 +78,31 @@ const Body = () => {
                       </span>
                     </div>
               </div> 
-              <div className="tracks mx-10 my-3 flex flex-col ">
+              <div className="tracks mx-10 my-2 mb-16 flex flex-col">
                         {
                           selectedPlaylist.tracks.map(({id,name,artists,image,duration,album,uri,track_num},index)=>{
                             return(
-                              <div className="rows hover:bg-[#000000cc] pb-6 px-2 mb-4" index={id}>
+                              <div className="rows hover:bg-[#000000cc] pb-6 px-1 " index={id}>
                                 <div className="col flex items-center text-[#dddcdc] ">
                                   <span key={id}>{index+1}</span>
                                 </div>
                                 
                                 <div className="col detail flex items-center text-[#dddcdc] gap-4 ">
-                                  <div className="img h-10">
+                                  <div className="img h-9">
                                     <img src={image} alt="tracks" />
                                   </div>
                                   <div className="info flex flex-col ">
                                    <span className="name mt-2 ">
                                     {name}
                                    </span>
-                                   <span>{artists}</span>
+                                   <span>{artists.join(", ")}</span>
                                 </div>
                                 </div>
                                 <div className="col album flex items-center text-[#dddcdc]">
                                   {album}
                                 </div>
                                 <div className="col  time flex items-center text-[#dddcdc]">
-                                  {duration}
+                                  {msToSec(duration)}
                                 </div>
                                
                               </div>

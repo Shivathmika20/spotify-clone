@@ -4,8 +4,11 @@ export const initialState={
     token:null,
     playlist:[],
     userDetails:null,
-    selectedPlayId:'5SnKo9jLbO3FEIlPJT4o6P',
+   selectedPlayId:'5SnKo9jLbO3FEIlPJT4o6P',
+    // selectedPlayId:'1HwUUWbBMWg9bjmNazNjZZ',
     selectedPlaylist:null,
+    currentPlaying:null,
+    playerState:false,
 };
 
 const reducer=(state,action)=>{
@@ -34,6 +37,18 @@ const reducer=(state,action)=>{
             return{
                 ...state,
                selectedPlaylist:action.selectedPlaylist,
+            }
+        }
+        case reducercase.SET_CURRENTPLAYING:{
+            return{
+                ...state,
+               currentPlaying:action.currentPlaying,
+            }
+        }
+        case reducercase.SET_PLAYERSTATE:{
+            return{
+                ...state,
+               playerState:action.playerState,
             }
         }
         default:return state;

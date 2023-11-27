@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .list{
   display: grid;
   grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
@@ -7,3 +12,29 @@
   grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
   
 }
+
+.play{
+  color: #b3b3b3;
+  transition: 0.3s ease-in-out;
+  
+  
+}
+.play:hover{
+  color: white;
+  
+}
+.foot{
+  grid-template-columns: 1.3fr 2fr 1fr;
+  border-top: 1px solid #282828;
+}
+.next,.prev,.state{
+  font-size: 2rem;
+}
+/* spotify-nav{
+  ::-webkit-scrollbar{
+    width: 0.8rem;
+    &::-ms-thumb{
+      background-color: black;
+    }
+  }
+} */
