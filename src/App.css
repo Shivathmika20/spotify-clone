@@ -3,9 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+.spotify-main{
+  background: linear-gradient(transparent,rgba(0,0,0,1));
+  background-color: rgb(32,87,100);
+
+}
 .list{
   display: grid;
   grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
+  
 }
 .rows{
   display: grid;
@@ -30,11 +36,5 @@
 .next,.prev,.state{
   font-size: 2rem;
 }
-/* spotify-nav{
-  ::-webkit-scrollbar{
-    width: 0.8rem;
-    &::-ms-thumb{
-      background-color: black;
-    }
-  }
-} */
+
+

@@ -50,8 +50,15 @@ const reducer=(state,action)=>{
                 ...state,
                playerState:action.playerState,
             }
+        }   
+        case reducercase.SET_PLAYLIST_ID:{
+            return{
+                ...state,
+               selectedPlayId:action.selectedPlayId,
+            }
         }
-        default:return state;
+        default:
+            return state;
     }
 };
 

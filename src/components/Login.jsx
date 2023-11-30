@@ -16,6 +16,7 @@ const Login = () => {
       "user-read-playback-position",
       "user-top-read",
     ];
+    
     window.location.href=`${api}?client_id=${clientId}&redirect_uri=${redirect}&scope=${scope.join(" ")}&response_type=token&show_dialog=true`;
   }
 

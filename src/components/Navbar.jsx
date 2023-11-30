@@ -7,7 +7,7 @@ const Navbar = () => {
   const [{userDetails}]=useContextProvider();
   
   return (
-    <div className='nav flex justify-between items-center p-8 w-full h-[16vh] bg-none sticky top-0 transition ease-in-out duration-300 '>
+    <div className='nav flex justify-between items-center py-8 px-8 w-full bg-none sticky top-0 transition ease-in-out duration-300 '>
       <div className="search bg-white flex w-1/3 px-4 py-1 rounded-3xl gap-2 items-center ">
         <FaSearch/>
         <input type="text" placeholder='Artists,Songs,Albums..' className='border-none h-8 w-full focus:outline-none' />

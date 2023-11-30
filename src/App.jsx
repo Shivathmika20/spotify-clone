@@ -18,13 +18,16 @@ const App = () => {
       console.log(token);
       dispatch({type:reducercase.SET_TOKEN,token})
     }
+    
   },[token,dispatch]);
   return (
-    <div className='main'>
+    
+    <div className='main '>
       {token?<Spotify />:<Login/>}
        
       
     </div>
+    
   )
 }
 

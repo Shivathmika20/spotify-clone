@@ -28,19 +28,29 @@ const Playlists = () => {
       getPlaylist();
     },[token,dispatch]);
 
+    const changeCurrentPlaylist = (selectedPlayId) => {
+      dispatch({ type: reducercase.SET_PLAYLIST_ID, selectedPlayId });
+    };
+
 
     return (
       <div className='overflow-hidden h-full pb-2 '>
         {
-          <ul className='flex flex-col pl-4 pb-4 gap-3 h-[50vh] overflow-auto max-h-full  '>
+          <ul className='flex flex-col overflow-auto max-h-full pl-4 gap-3 '>
             {
               playlist.map(({name,id})=>{
                 return(
-                  <li className='flex flex-row gap-4 hover:text-white transition duration-300 ease-in-out cursor-pointer ' key={id}>{name}</li>
+                  <li className='flex flex-row gap-4 hover:text-white transition duration-300 ease-in-out cursor-pointer hover:bg-[#181818] pl-2' key={id} onClick={() => changeCurrentPlaylist(id)}>{name}</li>
                 )
               })
               
             }
+
+           
+
+            
+            
+            
           </ul>
 
         }

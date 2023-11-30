@@ -18,7 +18,7 @@ const Currenttrack = () => {
               }
               
           );
-         console.log(res)
+         //console.log(res)
           if(res.data !==""){
             const {item}=res.data;
             const currentPlaying={

@@ -36,23 +36,21 @@ const Spotify = () => {
   return (
 
     
-    <div className='container max-w-[100vw] max-h-[100vh] overflow-hidden grid grid-rows-[minmax(87vh,15vh)] h-full w-full m-0'>
-       <div className='spotify-main grid  grid-cols-[200px_minmax(900px,_1fr)_100px] bg-gradient-to-b from-transparent to-black bg-[rgb(32,80,100)] h-full w-full '>
-          <Sidebar/>
-        <div className="spotify-nav h-full w-[87vw] overflow-auto ">
-          <Navbar/>
-          <div className="spotify-main h-full w-full">
-            <Body/>
-          </div>
-        </div>
-        
-      </div>
-
-      <div className="spotify-footer h-screen ">
-        <Footer/>
-      </div>
-      
-      
+    <div className='overflow-hidden h-screen'>
+      {/* <div className='w'> */}
+            <div className="spotify-main grid  grid-cols-[200px_minmax(900px,_1fr)]  h-full w-full">
+              <Sidebar/>
+              <div className="spotify-nav h-full overflow-auto ">
+                  <Navbar/>
+                  <div className="spotify-body">
+                    <Body/>
+                  </div>
+              </div>
+            </div>
+            <div className="foot h-fit w-full fixed bottom-0 ">
+              <Footer/>
+            </div>
+      {/* </div> */}
     </div>
   )
 }

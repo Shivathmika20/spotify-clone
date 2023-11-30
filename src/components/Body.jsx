@@ -64,7 +64,7 @@ const Body = () => {
                     <p className='description'>{selectedPlaylist.description}</p>
                   </div>
               </div>
-              <div className="list mt-4 grid  text-[#dddcdc] px-11 py-3 sticky top-[15vh] transition duration-300 ease-in-out ">
+              <div className="list mt-4 grid text-[#dddcdc]  px-11 py-3 top-[15vh] transition duration-300 ease-in-out border-b-2 border-b-slate-700">
                   
                     <div className="col">
                       <span>#</span>
@@ -77,6 +77,7 @@ const Body = () => {
                         <AiFillClockCircle />
                       </span>
                     </div>
+                 
               </div> 
               <div className="tracks mx-10 my-2 mb-16 flex flex-col">
                         {
