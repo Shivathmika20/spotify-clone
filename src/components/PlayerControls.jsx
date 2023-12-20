@@ -8,6 +8,7 @@ import { reducercase } from '../utils/cases'
 const PlayerControls = () => {
     const [{token,playerState},dispatch]=useContextProvider();
     const changeTrack=async (type)=>{
+      alert("only enabled for premium users");
         await axios.post(`https://api.spotify.com/v1/me/player/${type}`,
         {},
         {
@@ -18,7 +19,7 @@ const PlayerControls = () => {
           },
         }
       );
-
+        
       const res=await axios.get("https://api.spotify.com/v1/me/player/currently-playing",
       {
         headers:
@@ -47,6 +48,7 @@ const PlayerControls = () => {
   };
 
   const changeState=async ()=>{
+    alert("enabled for premuim users")
     const state=playerState ? "pause" :"play";
     const response=await axios.put(`https://api.spotify.com/v1/me/player/${state}`,{},
     {
@@ -63,22 +65,24 @@ const PlayerControls = () => {
   }
       
   return (
-    <div className='flex  gap-8 justify-center items-center'>
+    <div className='flex  gap-8 justify-center items-center cursor-pointer'>
         <div className="shuff play">
-            <BsShuffle/>
+            <BsShuffle onClick={()=>{alert
+            ("enabled for premium users")}}/>
         </div>
-        <div className="prev play">
+        <div className="prev play cursor-pointer">
             <CgPlayTrackPrev onClick={()=>{changeTrack("previous")}}/>
         </div>
-        <div className="state play text-white">
+        <div className="state play text-white ">
             {playerState? <BsFillPauseCircleFill onClick={changeState}/> :<BsFillPlayCircleFill onClick={changeState}/>}
         </div>
-        <div className="next play">
+        <div className="next play cursor-pointer">
             <CgPlayTrackNext onClick={()=>{changeTrack("next")}}/>
         </div>
 
-        <div className="repeat play">
-            <FiRepeat/>
+        <div className="repeat play cursor-pointer">
+            <FiRepeat onClick={()=>{alert
+            ("enabled for premium users")}}/>
         </div>
     </div>
   )
