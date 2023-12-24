@@ -4,7 +4,7 @@ const Login = () => {
 
   const handle=()=>{
     const clientId="19bae18b54e64fec998d238d51a02d45";
-    const redirect="http://localhost:5173/";
+    // const redirect="http://localhost:5173/";
     const api="https://accounts.spotify.com/authorize";
     const scope=[
       "user-read-email",
